@@ -1,5 +1,7 @@
 var timeEl = document.querySelector(".time");
+
 var secondsLeft = 90;
+const startButton= document.getElementById('start-btn');
 
 function setTime() {
     var timerInterval = setInterval(function() {
