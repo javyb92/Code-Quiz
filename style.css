@@ -3,6 +3,7 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
+    text-decoration: none;
 }
 
 header{
@@ -14,6 +15,10 @@ header{
     text-align: center;
     border-bottom: 2px solid crimson;
     /* border: 5px dotted red; */
+}
+
+h1{
+    background-color: darkblue;
 }
 
 main{
@@ -30,6 +35,21 @@ main{
     background-color: rgb(91, 133, 212);
 }
 
+#indexbutton {
+    background-color: darkblue;
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    }
+
+
+
 .btn-grid{
     display: grid;
     grid-template-columns: repeat(1, auto);
@@ -37,6 +57,7 @@ main{
     margin:20px 0;
 
 }
+
 
 .btn{
     border: 1px solid black;
@@ -47,6 +68,8 @@ main{
 
 .btn:hover{
     border-color: whitesmoke;
+    color: whitesmoke;
+    text-decoration-line: none;
 }
 
 .btn.correctanswer{
@@ -115,7 +138,6 @@ footer{
     width: 100%;
     color: white;
     text-align: center;
-    height: 55px;
-    height: 40px;
+    height: 30px;
 
 }

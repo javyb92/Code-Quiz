@@ -1,34 +1,36 @@
-var userScore= 0
-var quizTime= 60
-const startButton= document.getElementById('start-btn')
+var timeEl = document.querySelector(".time");
+var secondsLeft = 90;
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft + " SECONDS LEFT!";
+  
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+      }
+  
+    }, 1000);
+  }
 
 
-startButton.addEventListener("click", startQuiz)
-
-function startQuiz(){
-    confirm("Click OK!")
-    if(window.confirm){
-        window.open("gamepage.html")
-    }
-}
-
-nextQuestion()
+// nextQuestion()
 
 
-startTimer()
+// function nextQuestion(){}
 
 
-function nextQuestion(){}
+// function selectAnswer(){}
 
 
-function selectAnswer(){}
-
-
-const questions = [
+// const questions = [
 
 
 
 
 
     
-]
+// ]
+
+setTime();
