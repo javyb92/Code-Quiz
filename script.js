@@ -1,16 +1,19 @@
-var nextButton = document.getElementById('Next-btn').style.visibility = "hidden";
-var startButton = document.getElementById('quizStart-btn')
+const nextButton = document.getElementById('Next-btn')
+const startButton = document.getElementById('quizStart-btn');
 const questionEl = document.getElementById('question');
-var answerButtonsElement = document.getElementById('answer-buttons');
 
 startButton.addEventListener('click', quizStart);
 
-
 function quizStart(){
-  document.getElementById("quizStart-btn").style.visibility = "hidden";
   document.getElementById("Next-btn").style.visibility = "visible";
+  document.getElementById("quizStart-btn").style.visibility = "hidden";
   timeSet();
   showQuestion();
+  nextButton.addEventListener('click', ah);
+};
+
+function ah(){
+  alert("working");
 };
 
 function timeSet(){
@@ -151,15 +154,9 @@ const questions = [
 function showQuestion(){
   
   var questionEl = document.getElementById("question").innerHTML = questions[0].question;
-  var questionEl = document.getElementById("answer0").innerHTML = questions[0].answers[0].text;
-  var questionEl = document.getElementById("answer1").innerHTML = questions[0].answers[1].text;
-  var questionEl = document.getElementById("answer2").innerHTML = questions[0].answers[2].text;
-  var questionEl = document.getElementById("answer3").innerHTML = questions[0].answers[3].text;
-
-  
-
-
+  var answerButtonsEl = document.getElementById("answer0").innerHTML = questions[0].answers[0].text;
+  var answerButtonsEl = document.getElementById("answer1").innerHTML = questions[0].answers[1].text;
+  var answerButtonsEl = document.getElementById("answer2").innerHTML = questions[0].answers[2].text;
+  var answerButtonsEl = document.getElementById("answer3").innerHTML = questions[0].answers[3].text;
 
 };
-
-
