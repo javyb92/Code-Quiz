@@ -151,6 +151,12 @@ const questions = [
 function showQuestion(){
   
   var questionEl = document.getElementById("question").innerHTML = questions[0].question;
+  var questionEl = document.getElementById("answer0").innerHTML = questions[0].answers[0].text;
+  var questionEl = document.getElementById("answer1").innerHTML = questions[0].answers[1].text;
+  var questionEl = document.getElementById("answer2").innerHTML = questions[0].answers[2].text;
+  var questionEl = document.getElementById("answer3").innerHTML = questions[0].answers[3].text;
+
+  
 
 
 
