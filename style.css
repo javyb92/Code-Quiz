@@ -112,7 +112,7 @@ border-color: whitesmoke;
 }
 
 
-#next-btn{
+.Game-btn{
     border: 1px solid black;
     background-color: darkblue;
     outline: none;
@@ -121,10 +121,19 @@ border-color: whitesmoke;
 }
     
 
-#next-btn:hover{
+.Game-btn:hover{
     border-color: whitesmoke;
 
 }
+
+#gameStart-btn{
+    margin-left: 110px;
+}
+
+#Next-btn{
+    margin-right: 110px;
+}
+
 /* [class^="col-"]{
     border: 5px dotted blue;
     height: 620px;
