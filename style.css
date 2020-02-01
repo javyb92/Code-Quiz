@@ -13,12 +13,21 @@ header{
     height: 70px;
     font-size: 50px;
     text-align: center;
-    border-bottom: 2px solid crimson;
+    border-bottom: 2px solid whitesmoke;
     /* border: 5px dotted red; */
 }
 
 h1{
     background-color: darkblue;
+}
+
+.time{
+    color: whitesmoke;
+  
+}
+
+.points{
+    color: seagreen;
 }
 
 main{
@@ -53,7 +62,7 @@ main{
 .btn-grid{
     display: grid;
     grid-template-columns: repeat(1, auto);
-    gap: 15px;
+    gap: 10px;
     margin:20px 0;
 
 }
@@ -87,18 +96,6 @@ main{
     padding: 20%;
 }
 
-#start-btn{
-    border: 1px solid black;
-    background-color: darkblue;
-    outline: none;
-    font-size: 25px;
-    margin: 10px;
-}
-
-#start-btn:hover{
-border-color: whitesmoke;
-}
-
 #highscore-btn{
     border: 1px solid black;
     font-size: 25px;
@@ -112,26 +109,33 @@ border-color: whitesmoke;
 }
 
 
-.Game-btn{
-    border: 1px solid black;
-    background-color: darkblue;
-    outline: none;
-    font-size: larger;
+.Game-Btn-grid{
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+    font-size: 20px;
+    
+}
 
+.Game-btn{
+    border: 1px solid whitesmoke;
+    color: darkblue;
+    background-color: whitesmoke;
+    outline: none;
 }
     
 
 .Game-btn:hover{
-    border-color: whitesmoke;
+    border-color: darkblue;
 
+}
+
+#Next-btn{
+    visibility: hidden;
 }
 
 #gameStart-btn{
     margin-left: 110px;
-}
-
-#Next-btn{
-    margin-right: 110px;
 }
 
 /* [class^="col-"]{

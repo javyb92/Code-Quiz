@@ -1,6 +1,6 @@
 const nextButton = document.getElementById('Next-btn')
 const startButton = document.getElementById('quizStart-btn');
-const questionEl = document.getElementById('question');
+let questionEl = document.getElementById('question');
 
 startButton.addEventListener('click', quizStart);
 
@@ -9,12 +9,10 @@ function quizStart(){
   document.getElementById("quizStart-btn").style.visibility = "hidden";
   timeSet();
   showQuestion();
-  nextButton.addEventListener('click', ah);
+  nextButton.addEventListener('click', nextQuestionSet);
+
 };
 
-function ah(){
-  alert("working");
-};
 
 function timeSet(){
   var secondsLeft = 90;
@@ -22,29 +20,16 @@ function timeSet(){
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = secondsLeft + " SECONDS LEFT!";
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        alert("Times up!")
-      }
+      // if(secondsLeft === 0) {
+      //   clearInterval(timerInterval);
+      //   alert("Times up!")
+      // }
     }, 1000);
 };
 
-
-// function selectAnswer(){
-
-// if true
-
-
-// if false
-
-
-// }
-
-
 const questions = [
 {
-
-  question: 'What color is the sky?',
+  question:  'What color is the sky?',
   answers:[
 
     { text: 'Blue', correct: true},
@@ -53,13 +38,9 @@ const questions = [
     { text: 'Banana', correct: false},
 
           ]
-
-
-
 }, 
 {
-
-  question: 'What color is the moon',
+  question: 'What color is the moon?',
   answers:[
 
     { text: 'White', correct: true},
@@ -68,12 +49,8 @@ const questions = [
     { text: 'Death Star', correct: false},
 
           ]
-
-
-
 },  
 {
-
   question: 'What color is the Dallas Cowboys Logo?',
   answers:[
 
@@ -81,14 +58,9 @@ const questions = [
     { text: 'Green', correct: false},
     { text: 'Eagles', correct: false},
     { text: 'Orange', correct: false},
-
           ]
-
-
-
 },   
 {
-
   question: 'What color is is the Dallas Stars Logo?',
   answers:[
 
@@ -97,12 +69,8 @@ const questions = [
     { text: 'Redwings', correct: false},
     { text: 'Yellow', correct: false},
           ]
-
-
-
 },   
 {
-
   question: 'What color is the White House',
   answers:[
 
@@ -112,12 +80,8 @@ const questions = [
     { text: 'Blue', correct: false},
 
           ]
-
-
-
 },   
 {
-
   question: 'What color is Rainbow?',
   answers:[
 
@@ -128,12 +92,8 @@ const questions = [
     
 
           ]
-
-
-
 },   
 {
-
   question: '9 + 1 =?',
   answers:[
 
@@ -143,20 +103,32 @@ const questions = [
     { text: '91', correct: false},
 
           ]
-
-
-
 },      
 ];
 
-
-
 function showQuestion(){
-  
-  var questionEl = document.getElementById("question").innerHTML = questions[0].question;
+
+  let questionEl = document.getElementById("question").innerHTML = questions[0].question;
   var answerButtonsEl = document.getElementById("answer0").innerHTML = questions[0].answers[0].text;
   var answerButtonsEl = document.getElementById("answer1").innerHTML = questions[0].answers[1].text;
   var answerButtonsEl = document.getElementById("answer2").innerHTML = questions[0].answers[2].text;
   var answerButtonsEl = document.getElementById("answer3").innerHTML = questions[0].answers[3].text;
 
 };
+
+var count=0;
+function nextQuestionSet(){
+count++;
+if(count<7) { 
+ document.getElementById("question").innerHTML = (questions[count].question); 
+ document.getElementById("answer0").innerHTML = questions[count].answers[0].text; 
+ document.getElementById("answer1").innerHTML = questions[count].answers[1].text; 
+ document.getElementById("answer2").innerHTML = questions[count].answers[2].text;
+ document.getElementById("answer3").innerHTML = questions[count].answers[3].text; 
+}
+
+else{
+// alert("Done!");
+
+}
+}; 
