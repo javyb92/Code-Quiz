@@ -1,32 +1,79 @@
+// Var, Const, let
+
 const nextButton = document.getElementById('Next-btn')
 const startButton = document.getElementById('quizStart-btn');
+const answerButton = document.getElementById('answer-buttons');
 let questionEl = document.getElementById('question');
 
+// Global Variables, scoreNumber is for score, count is vital for showing questions
+var scoreNumber = 0;
+var count= -1;
+
+// start button
 startButton.addEventListener('click', quizStart);
 
 function quizStart(){
   document.getElementById("Next-btn").style.visibility = "visible";
   document.getElementById("quizStart-btn").style.visibility = "hidden";
   timeSet();
-  showQuestion();
+  nextQuestionSet();
   nextButton.addEventListener('click', nextQuestionSet);
-
+  
+  
 };
 
-
+// Timer stuff
 function timeSet(){
   var secondsLeft = 90;
   var timeEl = document.querySelector(".time");
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = secondsLeft + " SECONDS LEFT!";
-      // if(secondsLeft === 0) {
-      //   clearInterval(timerInterval);
-      //   alert("Times up!")
-      // }
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        alert("Times up!")
+      }
     }, 1000);
 };
 
+// Score Stuff
+function score(){
+  var scoreEl = document.querySelector("#scorenumber");
+  scoreEl.textContent = scoreNumber;
+}
+
+// Question stuff, Placeholder Questions I made,See line 91 for actual answers
+
+function nextQuestionSet(){
+count++;
+if(count<7) { 
+ document.getElementById("question").innerHTML = (questions[count].question); 
+ document.getElementById("answer0").innerHTML = questions[count].answers[0].text; 
+ document.getElementById("answer1").innerHTML = questions[count].answers[1].text; 
+ document.getElementById("answer2").innerHTML = questions[count].answers[2].text;
+ document.getElementById("answer3").innerHTML = questions[count].answers[3].text; 
+};
+answerButton.addEventListener('click', checkanswer);
+// else{
+// // alert("Done!");
+// }
+}; 
+
+// Check Answers, right now every button pressed is a correct answer as shown by an alert, score doesnt work.
+
+function checkanswer() {
+
+  if (this){
+    alert("correct answer");
+    scorenumber++;
+  }
+
+  else{
+    alert("wrong");
+  }
+};
+  
+// Questions, using placeholder questions
 const questions = [
 {
   question:  'What color is the sky?',
@@ -65,7 +112,7 @@ const questions = [
   answers:[
 
     { text: 'White', correct: false},
-    { text: 'Green', correct: false},
+    { text: 'Green', correct: true},
     { text: 'Redwings', correct: false},
     { text: 'Yellow', correct: false},
           ]
@@ -105,30 +152,3 @@ const questions = [
           ]
 },      
 ];
-
-function showQuestion(){
-
-  let questionEl = document.getElementById("question").innerHTML = questions[0].question;
-  var answerButtonsEl = document.getElementById("answer0").innerHTML = questions[0].answers[0].text;
-  var answerButtonsEl = document.getElementById("answer1").innerHTML = questions[0].answers[1].text;
-  var answerButtonsEl = document.getElementById("answer2").innerHTML = questions[0].answers[2].text;
-  var answerButtonsEl = document.getElementById("answer3").innerHTML = questions[0].answers[3].text;
-
-};
-
-var count=0;
-function nextQuestionSet(){
-count++;
-if(count<7) { 
- document.getElementById("question").innerHTML = (questions[count].question); 
- document.getElementById("answer0").innerHTML = questions[count].answers[0].text; 
- document.getElementById("answer1").innerHTML = questions[count].answers[1].text; 
- document.getElementById("answer2").innerHTML = questions[count].answers[2].text;
- document.getElementById("answer3").innerHTML = questions[count].answers[3].text; 
-}
-
-else{
-// alert("Done!");
-
-}
-}; 
